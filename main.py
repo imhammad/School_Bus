@@ -28,5 +28,21 @@ class Bus:
                 for s in self.students:
                     print(f"{s.name} (Grade {s.grade})")
 
+    # Class for managing the app
+
+class SchoolBusApp:
+
+    def __init__(self):
         
+        self.buses = []
+
+    # To add a new bus
         
+    def add_bus(self):
+
+        number = input("Enter bus number: ")
+        driver = input("Enter driver name: ")
+
+        self.buses.append(Bus(number, driver))
+        print("Bus Added!")
+
