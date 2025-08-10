@@ -46,3 +46,14 @@ class SchoolBusApp:
         self.buses.append(Bus(number, driver))
         print("Bus Added!")
 
+
+    # To list all the buses
+
+    def list_buses(self):
+
+        if not self.buses:
+            print("No buses available.")
+        else:
+            for i, b in enumerate(self.buses):
+                print(f"{i+1}. Bus {b.number} - Driver: {b.driver}")
+        
