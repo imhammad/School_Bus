@@ -57,3 +57,26 @@ class SchoolBusApp:
             for i, b in enumerate(self.buses):
                 print(f"{i+1}. Bus {b.number} - Driver: {b.driver}")
         
+    # Assigning student to a bus
+
+    def assign_student(self):
+
+        self.list_buses()
+
+        try:
+            choice = int(input("Choose bus number: ")) - 1
+            
+            if choice < 0 or choice >= len(self.buses):
+                print("Invalid Choice!")
+
+                return 
+            name = input("Enter student name: ")
+            grade = input("Enter student grade: ")
+
+            self.buses[choice].add_student(Student(name, grade))
+            print("Student Assigned!")
+        
+        except ValueError:
+            print("Invalid input.")
+
+            
