@@ -79,4 +79,29 @@ class SchoolBusApp:
         except ValueError:
             print("Invalid input.")
 
+    # To view students in a bus
+
+    def view_bus_students(self):
+
+        self.list_buses()
+
+        try:
+            choice = int(input("Choose bus number: ")) - 1
+            
+            if choice < 0 or choice >= len(self.buses):
+                print("Invalid Choice!")
+
+                return 
+            
+            self.buses[choice].show_students()
+        
+        except ValueError:
+            print("Invalid input.")
+        
+        
+
+        
+
+
+
             
