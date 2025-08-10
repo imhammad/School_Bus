@@ -97,8 +97,49 @@ class SchoolBusApp:
         
         except ValueError:
             print("Invalid input.")
+    
+    # To run the menu loop
+
+    def run(self):
+
+        while True:
+
+            print("---------- School Bus ----------")
+            print("1. Add Bus")
+            print("2. List Buses")
+            print("3. Assign Students to Bus")
+            print("4. View Students in Bus")
+            print("5. Exit")
+
+            choice = input("Enter Choice: ")
+
+            if choice == '1':
+                self.add_bus()
+
+            elif choice == '2':
+                self.list_buses()
+
+            elif choice == '3':
+                self.assign_student()
+
+            elif choice == '4':
+                self.view_bus_students()
+
+            elif choice == '5':
+                print("Thank You, and GoodBye!")
+                
+                break
+
+            else:
+                print("Invalid choice.")
         
+
+
+
+
+
         
+
 
         
 
