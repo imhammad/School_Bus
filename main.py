@@ -14,21 +14,21 @@ class Bus:
 
         # To Add Students to the bus
 
-        def add_student(self, student):
+    def add_student(self, student):
 
-            self.students.append(student)
+        self.students.append(student)
         
-        # To Show the current Students in the bus
+    # To Show the current Students in the bus
 
-        def show_students(self):
+    def show_students(self):
 
-            if not self.students:
-                print("No students assigned yet.")
-            else:
-                for s in self.students:
-                    print(f"{s.name} (Grade {s.grade})")
+        if not self.students:
+            print("No students assigned yet.")
+        else:
+            for s in self.students:
+                print(f"{s.name} (Grade {s.grade})")
 
-    # Class for managing the app
+# Class for managing the app
 
 class SchoolBusApp:
 
@@ -127,11 +127,16 @@ class SchoolBusApp:
 
             elif choice == '5':
                 print("Thank You, and GoodBye!")
-                
+
                 break
 
             else:
                 print("Invalid choice.")
+
+# To Run the APP!
+
+app = SchoolBusApp()
+app.run()
         
 
 
