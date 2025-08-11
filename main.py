@@ -49,12 +49,23 @@ class SchoolBusAppGUI:
         tk.Button(root, text="View Students in Bus", width=20, command=self.view_bus_students).pack(pady=5)
         tk.Button(root, text="Exit", width=20, command=root.quit).pack(pady=20)
 
+    # To Add Bus
+
     def add_bus(self):
         number = simpledialog.askstring("Bus Number", "Enter bus number:")
         driver = simpledialog.askstring("Driver Name", "Enter driver name:")
         if number and driver:
             self.buses.append(Bus(number, driver))
             messagebox.showinfo("Success", "Bus added!")
+
+    # To List Buses
+
+    def list_buses(self):
+        if not self.buses:
+            messagebox.showinfo("Buses", "No buses available.")
+        else:
+            buses_str = "\n".join(f"{i+1}. Bus {b.number} - Driver: {b.driver}" for i, b in enumerate(self.buses))
+            messagebox.showinfo("Buses", buses_str)
 
 
     
