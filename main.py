@@ -38,6 +38,18 @@ class SchoolBusAppGUI:
         self.root.title("School Bus System")
         self.root.geometry("500x400")
 
+        # Background color (Can insert an image too here! hehe)
+        self.root.config(bg="#ffeb99")
+
+        tk.Label(root, text="School Bus Menu", font=("Arial", 20, "bold"), bg="#ffeb99").pack(pady=20)
+
+        tk.Button(root, text="Add Bus", width=20, command=self.add_bus).pack(pady=5)
+        tk.Button(root, text="List Buses", width=20, command=self.list_buses).pack(pady=5)
+        tk.Button(root, text="Assign Student to Bus", width=20, command=self.assign_student).pack(pady=5)
+        tk.Button(root, text="View Students in Bus", width=20, command=self.view_bus_students).pack(pady=5)
+        tk.Button(root, text="Exit", width=20, command=root.quit).pack(pady=20)
+
+
     
 
 
