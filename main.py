@@ -67,6 +67,22 @@ class SchoolBusAppGUI:
             buses_str = "\n".join(f"{i+1}. Bus {b.number} - Driver: {b.driver}" for i, b in enumerate(self.buses))
             messagebox.showinfo("Buses", buses_str)
 
+    # Assigning Students
+
+    def assign_student(self):
+        if not self.buses:
+            messagebox.showerror("Error", "No buses available.")
+            return
+        bus_index = simpledialog.askinteger("Bus", f"Choose bus number (1-{len(self.buses)}):") - 1
+        if 0 <= bus_index < len(self.buses):
+            name = simpledialog.askstring("Student Name", "Enter student name:")
+            grade = simpledialog.askstring("Grade", "Enter student grade:")
+            if name and grade:
+                self.buses[bus_index].add_student(Student(name, grade))
+                messagebox.showinfo("Success", "Student assigned!")
+        else:
+            messagebox.showerror("Error", "Invalid bus choice.")
+
 
     
 
