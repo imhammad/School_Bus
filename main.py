@@ -1,3 +1,6 @@
+import tkinter as tk
+from tkinter import messagebox, simpledialog
+
 
 class Student:
     def __init__(self, name, grade):
