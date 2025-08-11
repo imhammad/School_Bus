@@ -49,6 +49,13 @@ class SchoolBusAppGUI:
         tk.Button(root, text="View Students in Bus", width=20, command=self.view_bus_students).pack(pady=5)
         tk.Button(root, text="Exit", width=20, command=root.quit).pack(pady=20)
 
+    def add_bus(self):
+        number = simpledialog.askstring("Bus Number", "Enter bus number:")
+        driver = simpledialog.askstring("Driver Name", "Enter driver name:")
+        if number and driver:
+            self.buses.append(Bus(number, driver))
+            messagebox.showinfo("Success", "Bus added!")
+
 
     
 
