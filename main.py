@@ -23,83 +23,25 @@ class Bus:
         
     # To Show the current Students in the bus
 
-    def show_students(self):
-
+    def get_students_str(self):
         if not self.students:
-            print("No students assigned yet.")
-        else:
-            for s in self.students:
-                print(f"{s.name} (Grade {s.grade})")
+            return "No students assigned yet."
+        return "\n".join(f"{s.name} (Grade {s.grade})" for s in self.students)
 
 # Class for managing the app
 
-class SchoolBusApp:
+class SchoolBusAppGUI:
 
-    def __init__(self):
-        
+    def __init__(self, root):
         self.buses = []
+        self.root = root
+        self.root.title("School Bus System")
+        self.root.geometry("500x400")
 
-    # To add a new bus
-        
-    def add_bus(self):
-
-        number = input("Enter bus number: ")
-        driver = input("Enter driver name: ")
-
-        self.buses.append(Bus(number, driver))
-        print("Bus Added!")
+    
 
 
-    # To list all the buses
 
-    def list_buses(self):
-
-        if not self.buses:
-            print("No buses available.")
-        else:
-            for i, b in enumerate(self.buses):
-                print(f"{i+1}. Bus {b.number} - Driver: {b.driver}")
-        
-    # Assigning student to a bus
-
-    def assign_student(self):
-
-        self.list_buses()
-
-        try:
-            choice = int(input("Choose bus number: ")) - 1
-            
-            if choice < 0 or choice >= len(self.buses):
-                print("Invalid Choice!")
-
-                return 
-            name = input("Enter student name: ")
-            grade = input("Enter student grade: ")
-
-            self.buses[choice].add_student(Student(name, grade))
-            print("Student Assigned!")
-        
-        except ValueError:
-            print("Invalid input.")
-
-    # To view students in a bus
-
-    def view_bus_students(self):
-
-        self.list_buses()
-
-        try:
-            choice = int(input("Choose bus number: ")) - 1
-            
-            if choice < 0 or choice >= len(self.buses):
-                print("Invalid Choice!")
-
-                return 
-            
-            self.buses[choice].show_students()
-        
-        except ValueError:
-            print("Invalid input.")
     
     # To run the menu loop
 
