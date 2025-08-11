@@ -83,6 +83,22 @@ class SchoolBusAppGUI:
         else:
             messagebox.showerror("Error", "Invalid bus choice.")
 
+    # To View Students In A Bus
+
+    def view_bus_students(self):
+        if not self.buses:
+            messagebox.showerror("Error", "No buses available.")
+            return
+        bus_index = simpledialog.askinteger("Bus", f"Choose bus number (1-{len(self.buses)}):") - 1
+        if 0 <= bus_index < len(self.buses):
+            students_str = self.buses[bus_index].get_students_str()
+            messagebox.showinfo("Students", students_str)
+        else:
+            messagebox.showerror("Error", "Invalid bus choice.")
+
+
+    
+
 
     
 
